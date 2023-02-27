@@ -1,0 +1,21 @@
+this.desserts.push({
+            // id: response.data[i].capitalHEntity.id,
+            id: response.data[i].id,
+            archivo: response.data[i].archivo,
+            archivoTimbrar: response.data[i].archivoTimbrar,
+            totalEmpleados: response.data[i].totalEmpleados,
+            fechaInicio: response.data[i].fechaInicio,
+            fechaFin: response.data[i].fechaFin,
+            fechaPago: response.data[i].fechaPago,
+            descripcionSNFC: response.data[i].catalogoSNFCEntity.descripcion,
+            importeIsr: response.data[i].importeIsr,
+            descripcionStatus:
+              response.data[i].catalogoStatusEntity.descripcion,
+            fechaSubida: response.data[i].fechaSubida,
+            neto: response.data[i].neto,
+            numEjecuciones: response.data[i].numEjecuciones,
+            observaciones: response.data[i].observaciones,
+            documentoContable: response.data[i].documentoContable,
+            numero: response.data[i].numero,
+            nomina: response.data[i].nomina,
+          });

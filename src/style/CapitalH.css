@@ -1,0 +1,223 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+    margin-top: 25px;
+    max-width: 1500px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.title{
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+}
+.title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.container-form{
+    margin: 30px 0 12px 0;
+}
+.calendar-div{
+    display: flex;
+    margin-bottom: 20px;
+}
+.main-div{
+    display: flex;
+}
+
+
+
+
+
+<!--  <v-simple-table style="background-color: #81ACD3">
+    <thead style="background-color: #0BB832">
+      <tr>
+        <th class="text-left">Archivo</th>
+        <th class="text-left">Archivo Timbrado</th>
+        <th class="text-left">Empleados</th>
+        <th class="text-left">Fecha Inicio</th>
+        <th class="text-left">Fecha Fin</th>
+        <th class="text-left">Fecha Pago</th>
+        <th class="text-left">SNFC</th>
+        <th class="text-left">Estatus Timbrado</th>
+        <th class="text-left">Fecha de Subida</th>
+        <th class="text-left">Importe Isr</th>
+        <th class="text-left">Neto</th>
+        <th class="text-left">Documento Contable</th>
+        <th class="text-left">Número</th>
+        <th class="text-left">Número de Ejecuciones</th>
+        <th class="text-left">Nómina</th>
+        <th class="text-left">Observaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in desserts" :key="item.idTimbrado">
+        <td v-show="false">{{ item.id }}</td>
+        <td v-show="false">{{ item.idTimbrado }}</td>
+        <td>{{ item.archivo }}</td>
+        <td>{{ item.archivoTimbrar }}</td>
+        <td>{{ item.totalEmpleados }}</td>
+        <td>{{ item.fechaInicio }}</td>
+        <td>{{ item.fechaFin }}</td>
+        <td>{{ item.fechaPago }}</td>
+        <td>{{ item.descripcionSNFC }}</td>
+        <td>{{ item.descripcionStatus }}</td>
+        <td>{{ item.fechaSubida }}</td>
+        <td>{{ item.importeIsr }}</td>
+        <td>{{ item.neto }}</td>
+        <td>{{ item.documentoContable }}</td>
+        <td>{{ item.numero }}</td>
+        <td>{{ item.numEjecuciones }}</td>
+        <td>{{ item.nomina }}</td>
+        <td>{{ item.observaciones }}</td>
+      </tr>
+    </tbody>
+  </v-simple-table> -->
+
+<thead>
+        <tr>
+          <th class="text-left">Resultado</th>
+          <th class="text-left">Exitosos</th>
+          <th class="text-left">Fallidos</th>
+          <th class="text-left">Isr Timbrado</th>
+          <th class="text-left">Descarga(URL)</th>
+          <th class="text-left">PDF</th>
+          <th class="text-left">QR</th>
+          <th class="text-left">XML</th>
+          <th class="text-left">Fecha Fin</th>
+          <th class="text-left">Observaciones</th>
+          <th class="text-left">ID Timbrado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in desserts" :key="item.id">
+          <td>{{ item.resultado }}</td>
+          <td>{{ item.exito }}</td>
+          <td>{{ item.fallidos }}</td>
+          <td>{{ item.isrTimbrado }}</td>
+          <td>{{ item.urlDescarga }}</td>
+          <td>{{ item.pdf }}</td>
+          <td>{{ item.qr }}</td>
+          <td>{{ item.xml }}</td>
+          <td>{{ item.fechaFinalizado }}</td>
+          <td>{{ item.observaciones }}</td>
+        </tr>
+      </tbody>
+
+
+
+
+ <thead>
+        <tr>
+          <th class="text-left">Archivo</th>
+          <th class="text-left">Archivo Timbrado</th>
+          <th class="text-left">Empleados</th>
+          <th class="text-left">Fecha Inicio</th>
+          <th class="text-left">Fecha Fin</th>
+          <th class="text-left">Fecha Pago</th>
+          <th class="text-left">SNFC</th>
+          <th class="text-left">Estatus Timbrado</th>
+          <th class="text-left">Fecha de Subida</th>
+          <th class="text-left">Importe Isr</th>
+          <th class="text-left">Neto</th>
+          <th class="text-left">Documento Contable</th>
+          <th class="text-left">Número</th>
+          <th class="text-left">Número de Ejecuciones</th>
+          <th class="text-left">Nómina</th>
+          <th class="text-left">Observaciones</th>
+          <th class="text-left">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in desserts" :key="item.idTimbrado">
+          <td>{{ item.idTimbrado }}</td>
+          <td>{{ item.archivo }}</td>
+          <td>{{ item.archivoTimbrar }}</td>
+          <td>{{ item.totalEmpleados }}</td>
+          <td>{{ item.fechaInicio }}</td>
+          <td>{{ item.fechaFin }}</td>
+          <td>{{ item.fechaPago }}</td>
+          <td>{{ item.descripcionSNFC }}</td>
+          <td>{{ item.descripcionStatus }}</td>
+          <td>{{ item.fechaSubida }}</td>
+          <td>{{ item.importeIsr }}</td>
+          <td>{{ item.neto }}</td>
+          <td>{{ item.documentoContable }}</td>
+          <td>{{ item.numero }}</td>
+          <td>{{ item.numEjecuciones }}</td>
+          <td>{{ item.nomina }}</td>
+          <td>{{ item.observaciones }}</td>
+          <td>
+            <v-btn class="mr-3" elevation="1" color="orange" fab dark tile x-small @click="agregarResultado(item.id)">
+              <v-icon small> mdi-bell </v-icon>
+            </v-btn>
+            <v-btn class="mr-3" elevation="1" color="primary" fab dark tile x-small @click="editItem(item)">
+              <v-icon small> mdi-pencil </v-icon>
+            </v-btn>
+          </td>
+        </tr>
+      </tbody>
+
+
+<!-- <thead>
+        <tr>
+          <th class="text-left">ID</th>
+          <th class="text-left">Concepto</th>
+          <th class="text-left">Fondo</th>
+          <th class="text-left">Número de Oficio</th>
+          <th class="text-left">Fecha Inicio</th>
+          <th class="text-left">Fecha Fin</th>
+          <th class="text-left">Fecha Pago</th>
+          <th class="text-left">Retención Isr</th>
+          <th class="text-left">Ajuste Isr</th>
+          <th class="text-left">Subsidio</th>
+          <th class="text-left">Total a Pagar</th>
+          <th class="text-left">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in desserts" :key="item.id">
+          <td>{{ item.id }}</td>
+          <td>{{ item.concepto }}</td>
+          <td>{{ item.fondo }}</td>
+          <td>{{ item.numeroOficio }}</td>
+          <td>{{ item.fechaInicio }}</td>
+          <td>{{ item.fechaFin }}</td>
+          <td>{{ item.fechaPago }}</td>
+          <td>{{ item.retencionIsr }}</td>
+          <td>{{ item.ajusteIsr }}</td>
+          <td>{{ item.subsidioAjuste }}</td>
+          <td>{{ item.pagar }}</td>
+          <td>
+            <v-btn class="mr-3" elevation="1" color="orange" fab dark tile x-small @click="agregarTimbrado(item.id)">
+              <v-icon small> mdi-bell </v-icon>
+            </v-btn>
+            <v-btn class="mr-3" elevation="1" color="primary" fab dark tile x-small @click="editItem(item)">
+              <v-icon small> mdi-pencil </v-icon>
+            </v-btn>
+          </td>
+        </tr>
+        <template>
+          <v-dialog v-model="dialogTimbrado" max-width="700px">
+            <FormTimbrado :idCapitalH="idCapitalH" @closeCompTim="close" />
+          </v-dialog>
+        </template>
+      </tbody> -->
+
+ */
